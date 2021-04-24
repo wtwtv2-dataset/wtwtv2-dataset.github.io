@@ -14,7 +14,7 @@
     <!-- <meta name="twitter:image" content="https://hotpotqa.github.io/img/question_types.png">
     <meta property="og:image" content="https://hotpotqa.github.io/img/question_types.png"> -->
 
-    <title>WTWTv2 Homepage</title>
+    <title>Targeted-WTWT Homepage</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 {
   "@context":"https://schema.org/",
   "@type":"Dataset",
-  "name":"WTWTv2: Will-They-Won't-They version 2. Large Scale Stance Detection Dataset",
+  "name":"tWT-WT: The Targeted Will-They-Won't-They large scale dataset for Stance Detection.",
   "description": "The stance detection task aims at detecting the stance of a tweet or a text for a target. Though the task involves reasoning of the tweet with respect to a target, it is possible to achieve high accuracy (even above human upperbounds) on publicly available Twitter stance detection datasets without looking at the target sentence due to spurious-cues. WTWTv2 is a new large-scale stance detection dataset free of such biases. It is derived from the WTWT dataset.",
   "url":"https://wtwtv2-dataset.github.io/",
   "keywords":[
@@ -85,7 +85,7 @@
   <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="index.html">WTWTv2</a>
+    <a class="navbar-brand" href="index.html">Targeted-WTWT</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
@@ -112,7 +112,7 @@
             <img src="img/wordcloud.png" alt="logo" style="height:250px;top:-100px;"/>
           </div>
 
-          <span class="subheading logo">WTWTv2: A Challenging Large Scale Stance Detection Dataset.</span>
+          <span class="subheading logo"><i>t</i>WT–WT: Targeted Will-They-Won't-They Stance Detection Dataset.</span>
         </div>
       </div>
     </div>
@@ -125,9 +125,9 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="list-group">
-        <div class="list-group-item"><h4>What is WTWTv2?</h4>
-        <p>We find that the models can shortcut stance detection task on the publicly available Twitter stance detection datasets without looking at the target sentence. WTWTv2, a derivative of the WTWT dataset, is a new large-scale stance detection dataset on which target-oblivious models fails to perform well. Thiss serves as a better dataset to train and evaluate models. </p>
-        <p>For more details about WTWTv2, please refer to our NAACL 2021 paper:</p>
+        <div class="list-group-item"><h4>What is Targeted-WTWT?</h4>
+        <p>We find that the models can shortcut stance detection task on the publicly available Twitter stance detection datasets without looking at the target sentence. Targeted-WTWT, a derivative of the WTWT dataset, is a new large-scale stance detection dataset on which target-oblivious models fails to perform well. Thiss serves as a better dataset to train and evaluate models. </p>
+        <p>For more details about Targeted-WTWT, please refer to our NAACL 2021 paper:</p>
         <p class="text-center">
           <a href="https://wtwtv2-dataset.github.io/paper.pdf"><button type="button" class="btn btn-info">Kaushal et al. 2021</button></a>
         </p>
@@ -136,8 +136,8 @@
           <a href="https://github.com/Ayushk4/bias-stance"><button type="button" class="btn btn-success">Code</button></a>
         </p>
         </div>
-        <div class="list-group-item"><h4>WTWTv2 Dataset</h4>
-        <p>WTWTv2 is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>. The link to the dataset is provided below.</p>
+        <div class="list-group-item"><h4>Targeted-WTWT Dataset</h4>
+        <p>Targeted-WTWT is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>. The link to the dataset is provided below.</p>
         <p class="text-center">
           <a href="https://raw.githubusercontent.com/Ayushk4/stance-dataset/master/dataset/wtwt_new.json"><button type="button" class="btn btn-success">Dataset (12.8MB)</button></a>
         </p>
@@ -150,17 +150,21 @@
         </p>
         </div>
         <div class="list-group-item"><h4>Evaluation</h4>
-          As explained in the Sec 3.1 of the paper, we propose a similar cross-target evaluation setting for WTWTv2 as WTWT.
-          
-          For the in domain (health) mergers, train on three health merger (total six targets including negated target for each merger) and test on the fourth health merger. The two final scores on in-domain are calculated by averaging and weighted averaging the F<sub>1</sub>-scores across the in-domain mergers.
-          For the out-of-domain evaluation, train on the eight targets corresponding to the 4 health mergers and test on the two targets for entertainment merger.
+          As explained in the Sec 3.1 of the paper, we propose a similar cross-target evaluation setting for Targeted-WTWT as WTWT.
+
+          We consider F<sub>1</sub> is <b>Macro averaged</b> across the classes.
+          <br>
+           -> For the in domain (health) mergers, train on three health merger (total six targets including negated target for each merger) and test for F<sub>1</sub> on the fourth health merger. Repeat this with having each of the four merger being a test set at least once. The two final scores on in-domain are obtained by averaging and weighted averaging the four F<sub>1</sub> scores.
+          <br>
+           -> For the out-of-domain evaluation, train on the eight targets corresponding to the 4 health mergers and test on the two targets for entertainment merger.
+    
 
         </div>
         <div class="list-group-item"><h4>Citation</h4>
-          <p>If you use WTWTv2 in your research, please cite our paper with the following BibTeX entry</p>
+          <p>If you use Targeted-WTWT dataset in your research, please cite our paper with the following BibTeX entry</p>
         <pre>
           @inproceedings{kaushal2020stance,
-            title={Stance Detection is not Classification: Increasing the Role of Target Entities for Detecting Stance},
+            title={tWT–WT: A Dataset to Assert the Role of Target Entities for Detecting Stance},
             author={Kaushal, Ayush and Saha, Avirup and Ganguly, Niloy} 
             booktitle={Proceedings of the 2021 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT 2021)},
             year={2021}
@@ -172,15 +176,10 @@
 
 <div class="col-lg-7">
   <div class="card card-outline-secondary">
-    <div class="card-header">
-      Leaderboard 
+    <div class="card-header" style="font-size:30px">
+      <b>Leaderboard </b>
     </div>
     <div class="card-body">
-      F<sub>1</sub> is <b>Macro averaged</b> across the classes.
-      <br>
-       -> For the in domain (health) mergers, train on three health merger (total six targets including negated target for each merger) and test for F<sub>1</sub> on the fourth health merger. Repeat this with having each of the four merger being a test set at least once. The two final scores on in-domain are obtained by averaging and weighted averaging the four F<sub>1</sub> scores.
-      <br>
-       -> For the out-of-domain evaluation, train on the eight targets corresponding to the 4 health mergers and test on the two targets for entertainment merger.
 
       <table class="table table-responsive">
         <thead class="thead-light">
